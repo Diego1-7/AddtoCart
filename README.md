@@ -38,4 +38,4 @@ This is a simple online store with a shopping cart built using **HTML**, **CSS**
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/tienda-en-linea.git
+   git clone https://github.com/Diego1-7/AddtoCart.git

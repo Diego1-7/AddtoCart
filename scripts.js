@@ -25,11 +25,11 @@ const products = [
 let cart = [];
 
 function displayProducts() {
-    const productlist = document.getElementById("product-list");
-    productlist.innerHTML = products.map(product => `
+    const productList = document.getElementById("product-list");
+    productList.innerHTML = products.map(product => `
         <div class="product">
-       <img src="${product.image}" alt="${product.name}" />
-       <h3>${product.name}</h3>
+         <img src="${product.image}" alt="${product.name}">
+         <h3>${product.name}</h3>
          <p>${product.description}</p>
          <p>Price: $${product.price}</p>
          <button onclick="addToCart(${product.id})">Add to Cart</button>
@@ -39,7 +39,7 @@ function displayProducts() {
 
 function addToCart(id) {
     const product = products.find(p => p.id === id);
-   const productInCart = cart.find(p => p.id === id);
+    const productInCart = cart.find(p => p.id === id);
 
    if (productInCart) {
        productInCart.quantity++;
@@ -55,18 +55,18 @@ function updateCart() {
     const totalElement = document.getElementById("total");
 
     cartList.innerHTML = cart.map(product => `
-        <div class="cart-item"> 
+    <div class="cart-item"> 
        <img src="${product.image}" alt="${product.name}">
        <div class="info">
        <span>${product.name} (${product.quantity})</span>
        <span>$${(product.price * product.quantity).toFixed(2)}</span>
-         </div>
-         <button onclick="decrementQuantity(${product.id})">-</button>
-         <button onclick="removeFromCart(${product.id})">Remove</button>
-         </div> 
+    </div>
+       <button onclick="decreaseQuantity(${product.id})">-</button>
+       <button onclick="removeProduct(${product.id})">Remove</button>
+    </div> 
     `).join("");
 
-    const total = cart.reduce((sum, product) => sum + product.price * product.quatity, 0);
+    const total = cart.reduce((sum, product) => sum + product.price * product.quantity, 0);
     totalElement.textContent = total.toFixed(2); 
 }
 

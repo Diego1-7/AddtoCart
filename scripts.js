@@ -62,6 +62,7 @@ function updateCart() {
        <span>$${(product.price * product.quantity).toFixed(2)}</span>
     </div>
        <button onclick="decreaseQuantity(${product.id})">-</button>
+       <button class="increase-btn" onclick="increaseQuantity(${product.id})">+</button>
        <button onclick="removeProduct(${product.id})">Remove</button>
     </div> 
     `).join("");
@@ -81,6 +82,15 @@ function decreaseQuantity(id) {
 
     updateCart();
 }
+
+function increaseQuantity(id) {
+    const productInCart = cart.find(p => p.id === id);
+    if (productInCart) {
+    productInCart.quantity++;
+    updateCart();
+    }
+}
+
 
 function removeProduct(id) {
     cart = cart.filter(p => p.id !== id);

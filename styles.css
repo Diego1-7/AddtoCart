@@ -141,6 +141,21 @@ border-bottom: none;
     background-color: #c82333;
 }
 
+.cart-item .increase-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+.cart-item .increase-btn:hover {
+    background-color: #218838;
+}
+
 .total {
     font-size: 1.2rem;
     font-weight: bold;

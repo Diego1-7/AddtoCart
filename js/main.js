@@ -1,6 +1,9 @@
 import { products } from "./modules/products.js";
 import { addToCart, updateCart, decreaseQuantity, increaseQuantity, removeProduct } from "./modules/cart.js";
 
+const THEME_DARK = "dark";
+const THEME_LIGHT = "light";
+
 function displayProducts() {
     const productList = document.getElementById("product-list");
     productList.innerHTML = products.map(product => `
@@ -31,15 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleTheme() {
     const body = document.body;
     const currentTheme = body.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    const newTheme = currentTheme === THEME_DARK ? THEME_LIGHT : THEME_DARK;
     body.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
 }
 
 function loadTheme() {
-    const savedTheme = localStorage.getItem("theme") || "light";
+    const savedTheme = localStorage.getItem("theme") || THEME_LIGHT;
     document.body.setAttribute("data-theme", savedTheme);
-    document.getElementById("theme-toggle").checked = savedTheme === "dark";
+    document.getElementById("theme-toggle").checked = savedTheme === THEME_DARK;
 }
 
 const themeToggle = document.getElementById("theme-toggle");

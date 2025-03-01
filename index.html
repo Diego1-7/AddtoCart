@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+<div class="theme-toggle-container">
+    <label class="theme-toggle">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+    </label>
+    <span class="theme-label">Dark Mode</span>
+</div>
+
     <div class="container">
         <h1>Online Store</h1>
 
@@ -21,6 +30,6 @@
             <p class="total">Total: $<span id="total">0</span></p>
         </section>
     </div>
-    <script src="scripts.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
